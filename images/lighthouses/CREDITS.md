@@ -2,7 +2,7 @@
 
 All four photos come from Wikimedia Commons. Each license allows commercial use.
 They show the lighthouses themselves, not J. Nally & Company's restoration work.
-The photos are resized and compressed for the web; nothing else about them is changed.
+The photos are resized and compressed for the web; nothing else about them is changed. The full-size originals are in this repo's git history (commit 54d71b7).
 
 | File | Lighthouse | Photographer | License | Source |
 |---|---|---|---|---|
