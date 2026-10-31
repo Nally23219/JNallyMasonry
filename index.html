@@ -3,599 +3,562 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>J. Nally &amp; Company | Historic Masonry &amp; Lighthouse Restoration, North Shore MA</title>
-<meta name="description" content="Martin J. Nally, preservation mason with 30+ years of historic and lighthouse restoration for the U.S. Coast Guard. Stonework, repointing, chimneys and fine restoration in Gloucester, Beverly Farms, Manchester-by-the-Sea and Cape Ann.">
+<title>J. Nally &amp; Company | Preservation Masonry &amp; Lighthouse Restoration</title>
+<meta name="description" content="Martin J. Nally, preservation mason in Manchester-by-the-Sea, MA. 30+ years of historic masonry and 20+ lighthouse projects for the U.S. Coast Guard.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#14243a;
-    --navy-2:#1c3350;
-    --granite:#6f7479;
-    --stone:#e9e4da;
-    --stone-2:#f5f2ec;
-    --mortar:#cfc6b6;
-    --brass:#b08a4a;
-    --ink:#1d2329;
-    --muted:#5b636b;
-    --white:#ffffff;
-    --serif:"Cormorant Garamond", Georgia, serif;
-    --sans:"Inter", system-ui, -apple-system, sans-serif;
-    --max:1180px;
+    --ink:#101214;
+    --ink-2:#1a1d20;
+    --line-dark:rgba(237,234,227,.14);
+    --bone:#edeae3;
+    --bone-2:#e3dfd5;
+    --line:rgba(16,18,20,.14);
+    --muted:#6b6e70;
+    --muted-dark:rgba(237,234,227,.6);
+    --lamp:#e8692c;
+    --sans:"Inter Tight", system-ui, -apple-system, sans-serif;
+    --serif:"Instrument Serif", Georgia, serif;
+    --mono:"JetBrains Mono", ui-monospace, monospace;
+    --max:1320px;
+    --pad:clamp(16px,4vw,48px);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);background:var(--stone-2);line-height:1.65;font-size:17px}
-  img,svg{display:block;max-width:100%}
-  a{color:inherit}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
-  .eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:14px}
-  .btn{display:inline-block;padding:15px 28px;border-radius:2px;font-weight:600;font-size:.95rem;text-decoration:none;letter-spacing:.03em;transition:.2s;border:1px solid transparent;cursor:pointer;font-family:var(--sans)}
-  .btn-primary{background:var(--brass);color:var(--white)}
-  .btn-primary:hover{background:#97743b}
-  .btn-ghost{border-color:rgba(255,255,255,.5);color:var(--white)}
-  .btn-ghost:hover{background:rgba(255,255,255,.1)}
-  .placeholder{background:#fff3c4;color:#6b5300;padding:0 4px;border-radius:2px;font-style:normal}
+  body{font-family:var(--sans);background:var(--bone);color:var(--ink);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  .mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+  .serif{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lamp);margin-right:10px;vertical-align:middle;box-shadow:0 0 0 0 rgba(232,105,44,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,105,44,.55)}70%{box-shadow:0 0 0 12px rgba(232,105,44,0)}100%{box-shadow:0 0 0 0 rgba(232,105,44,0)}}
 
   /* NAV */
-  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
-  header.scrolled{background:rgba(20,36,58,.97);box-shadow:0 2px 20px rgba(0,0,0,.2)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
-  .logo{display:flex;align-items:center;gap:12px;color:var(--white);text-decoration:none}
-  .logo-mark{width:40px;height:40px}
-  .logo-text{font-family:var(--serif);font-size:1.45rem;font-weight:700;line-height:1}
-  .logo-text small{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;font-weight:500;opacity:.75;margin-top:4px}
-  .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
-  .nav-links a{color:var(--white);text-decoration:none;font-size:.92rem;opacity:.9}
-  .nav-links a:hover{opacity:1;color:var(--mortar)}
-  .nav-links .btn{padding:10px 20px;opacity:1}
-  .menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+  header{position:fixed;inset:0 0 auto;z-index:50;padding:18px 0;transition:background .3s,padding .3s;color:var(--bone)}
+  header.scrolled{background:rgba(16,18,20,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{font-weight:600;font-size:1.05rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  .brand-mark{width:26px;height:26px}
+  .nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+  .nav ul a{font-size:.9rem;opacity:.75;transition:opacity .2s}
+  .nav ul a:hover{opacity:1}
+  .pill{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:999px;background:var(--bone);color:var(--ink);font-weight:600;font-size:.88rem;transition:.25s;border:0;cursor:pointer;font-family:var(--sans)}
+  .pill:hover{background:var(--lamp);color:#fff}
+  .pill .arr{transition:transform .25s}
+  .pill:hover .arr{transform:translateX(3px)}
+  .nav ul .pill{opacity:1}
+  .menu-btn{display:none;background:none;border:1px solid var(--line-dark);color:var(--bone);border-radius:999px;padding:9px 16px;font:500 .85rem var(--sans);cursor:pointer}
 
   /* HERO */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:var(--white);overflow:hidden;
-    background:linear-gradient(180deg,#0e1a2b 0%,#1c3350 55%,#2b4466 100%)}
-  .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;
-    background:linear-gradient(180deg,transparent,rgba(14,26,43,.6))}
-  .hero-art{position:absolute;right:4%;bottom:0;height:88%;opacity:.95;pointer-events:none}
-  .hero-content{position:relative;z-index:2;max-width:640px;padding-top:80px}
-  .hero h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:24px}
-  .hero h1 em{color:var(--mortar);font-style:italic}
-  .hero p{font-size:1.15rem;opacity:.88;margin-bottom:36px;max-width:540px}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-  .beam{transform-origin:200px 118px;animation:sweep 7s ease-in-out infinite}
-  @keyframes sweep{0%,100%{opacity:.15}50%{opacity:.5}}
+  .hero{background:var(--ink);color:var(--bone);padding:140px 0 0;overflow:hidden;position:relative}
+  .hero-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted-dark);padding-bottom:28px;border-bottom:1px solid var(--line-dark)}
+  .hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(30px,5vw,70px);padding:clamp(40px,6vw,80px) 0 clamp(50px,6vw,90px);align-items:end}
+  .hero h1{font-size:clamp(3rem,7.6vw,7.4rem);line-height:.92;letter-spacing:-.045em;font-weight:600}
+  .hero h1 .serif{font-weight:400;color:var(--lamp);letter-spacing:-.02em}
+  .hero-lede{margin-top:34px;max-width:520px;color:var(--muted-dark);font-size:1.12rem}
+  .hero-lede strong{color:var(--bone);font-weight:500}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+  .ghost{display:inline-flex;align-items:center;padding:11px 20px;border-radius:999px;border:1px solid var(--line-dark);font-size:.88rem;font-weight:500;transition:.25s}
+  .ghost:hover{border-color:var(--bone)}
+  .hero-photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:4px}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:35% 30%;filter:grayscale(1) contrast(1.08);transition:filter .8s, transform 1.2s}
+  .hero-photo:hover img{filter:grayscale(0);transform:scale(1.03)}
+  .hero-photo figcaption{position:absolute;left:14px;bottom:14px;right:14px;display:flex;justify-content:space-between;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .hero-photo.missing{background:var(--ink-2)}
+  .hero-photo.missing img{display:none}
 
-  /* TRUST BAR */
-  .trust{background:var(--navy);color:var(--white);border-top:1px solid rgba(255,255,255,.08)}
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
-  .trust-item{padding:34px 16px;border-right:1px solid rgba(255,255,255,.08)}
-  .trust-item:last-child{border-right:0}
-  .trust-item strong{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--mortar)}
-  .trust-item span{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-dark)}
+  .stat{padding:34px 0 40px;border-right:1px solid var(--line-dark);padding-left:clamp(0px,2vw,28px)}
+  .stat:first-child{padding-left:0}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-size:clamp(2.6rem,5vw,4.4rem);font-weight:600;letter-spacing:-.04em;line-height:1}
+  .stat span{color:var(--muted-dark);margin-top:10px;display:block}
 
-  section{padding:110px 0}
-  .section-head{max-width:680px;margin-bottom:60px}
-  .section-head h2{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:18px;color:var(--navy)}
-  .section-head p{color:var(--muted);font-size:1.08rem}
+  /* TICKER */
+  .ticker{background:var(--lamp);color:var(--ink);overflow:hidden;white-space:nowrap;padding:16px 0}
+  .ticker-track{display:inline-flex;animation:scroll 40s linear infinite}
+  .ticker span{font-size:1.4rem;font-weight:500;letter-spacing:-.02em;padding:0 22px;display:inline-flex;align-items:center;gap:44px}
+  .ticker span::after{content:"✦";font-size:.8rem}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{padding:clamp(80px,11vw,150px) 0}
+  .label{display:flex;align-items:center;gap:14px;color:var(--muted);margin-bottom:34px}
+  .label::before{content:"";width:28px;height:1px;background:currentColor}
+  .dark .label{color:var(--muted-dark)}
+  h2{font-size:clamp(2.4rem,5.4vw,4.8rem);line-height:.98;letter-spacing:-.04em;font-weight:600}
+  h2 .serif{font-weight:400}
+
+  /* INTRO */
+  .intro p{font-size:clamp(1.6rem,3.2vw,2.75rem);line-height:1.18;letter-spacing:-.025em;font-weight:500;max-width:1100px}
+  .intro p .serif{color:var(--lamp)}
+  .intro p .dim{color:#9a9c9d}
 
   /* SERVICES */
-  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--mortar);border:2px solid var(--mortar)}
-  .service{background:var(--stone-2);padding:38px 28px;transition:.25s}
-  .service:hover{background:var(--white)}
-  .service-icon{width:46px;height:46px;margin-bottom:22px;color:var(--brass)}
-  .service h3{font-size:1.6rem;color:var(--navy);margin-bottom:10px}
-  .service p{color:var(--muted);font-size:.97rem}
-  .service.featured{background:var(--navy);color:var(--white)}
-  .service.featured h3{color:var(--white)}
-  .service.featured p{color:rgba(255,255,255,.75)}
+  .svc-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:60px}
+  .svc-head p{color:var(--muted);max-width:460px;justify-self:end}
+  .svc{border-top:1px solid var(--line)}
+  .svc-row{display:grid;grid-template-columns:90px 1.1fr 1fr 40px;gap:24px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line);transition:padding .35s, background .35s;position:relative}
+  .svc-row:hover{padding-left:18px;padding-right:18px;background:var(--bone-2)}
+  .svc-row .n{color:var(--muted)}
+  .svc-row h3{font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+  .svc-row p{color:var(--muted)}
+  .svc-row .go{justify-self:end;font-size:1.3rem;transition:transform .3s, color .3s}
+  .svc-row:hover .go{transform:rotate(-45deg);color:var(--lamp)}
+  .svc-row.flag h3::after{content:"Signature";font:500 .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--lamp);color:#fff;padding:4px 8px;border-radius:999px;margin-left:12px;vertical-align:middle;position:relative;top:-4px}
 
-  /* LIGHTHOUSE FEATURE */
-  .feature{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
-  .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-  .feature h2{font-size:clamp(2.2rem,4vw,3.4rem);margin-bottom:24px}
-  .feature p{opacity:.82;margin-bottom:18px}
-  .feature ul{list-style:none;margin:28px 0 36px}
-  .feature li{padding:12px 0 12px 30px;border-bottom:1px solid rgba(255,255,255,.1);position:relative}
-  .feature li::before{content:"";position:absolute;left:0;top:21px;width:14px;height:2px;background:var(--brass)}
-  .photo-slot{aspect-ratio:4/5;background:
-      repeating-linear-gradient(0deg,transparent 0 38px,rgba(255,255,255,.05) 38px 40px),
-      linear-gradient(160deg,#2b4466,#14243a);
-    border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;color:rgba(255,255,255,.55);font-size:.9rem;position:relative}
-  .photo-slot::before{content:"";position:absolute;inset:14px;border:1px solid rgba(176,138,74,.4)}
-
-  /* WORK */
-  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .work-card{background:var(--white);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:.25s}
-  .work-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,36,58,.12)}
-  .work-img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--granite);font-size:.85rem;text-align:center;padding:20px;
-    background:
-      linear-gradient(90deg,var(--stone) 0 48%,transparent 48% 52%,var(--stone) 52%) 0 0/120px 40px,
-      linear-gradient(90deg,var(--stone) 0 23%,transparent 23% 27%,var(--stone) 27% 73%,transparent 73% 77%,var(--stone) 77%) 0 20px/120px 40px,
-      var(--mortar)}
-  .work-img span{background:rgba(245,242,236,.92);padding:8px 14px}
-  .work-body{padding:24px 26px 28px}
-  .work-tag{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);font-weight:600}
-  .work-body h3{font-size:1.45rem;color:var(--navy);margin:6px 0 8px}
-  .work-body p{color:var(--muted);font-size:.93rem}
-
-  /* LEGACY */
-  .legacy{background:var(--stone)}
-  .legacy-grid{display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:center}
-  .legacy .photo-slot{background:linear-gradient(160deg,var(--granite),#4c5157);aspect-ratio:1/1.1}
-  .legacy h2{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);margin-bottom:24px}
-  .legacy p{color:var(--muted);margin-bottom:18px}
-  .portrait{position:relative;aspect-ratio:4/5;background:var(--granite);overflow:hidden;box-shadow:24px 24px 0 var(--mortar)}
-  .portrait img{width:100%;height:100%;object-fit:cover;object-position:40% 30%}
-  .portrait-fallback{display:none}
-  .portrait.missing img{display:none}
-  .portrait.missing .portrait-fallback{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:.9rem}
-  .signature{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--navy);margin-top:26px}
+  /* LIGHTHOUSES */
+  .dark{background:var(--ink);color:var(--bone)}
+  .lh-head{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end;margin-bottom:70px}
+  .lh-head p{color:var(--muted-dark);font-size:1.08rem}
+  .index{width:100%;border-collapse:collapse}
+  .index th{text-align:left;font:500 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted-dark);padding:0 16px 16px 0;border-bottom:1px solid var(--line-dark)}
+  .index td{padding:30px 16px 30px 0;border-bottom:1px solid var(--line-dark);vertical-align:top;transition:color .25s}
+  .index tr{transition:background .3s}
+  .index tbody tr:hover{background:rgba(237,234,227,.04)}
+  .index tbody tr:hover .lh-name{color:var(--lamp)}
+  .index .num{font:500 .8rem var(--mono);color:var(--muted-dark);width:70px}
+  .lh-name{font-size:clamp(1.4rem,2.6vw,2.2rem);font-weight:600;letter-spacing:-.03em;line-height:1.05;transition:color .25s}
+  .index .loc{color:var(--muted-dark);white-space:nowrap}
+  .index .scope{color:var(--muted-dark);max-width:420px}
+  .tag{display:inline-block;margin-top:10px;font:500 .66rem var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line-dark);border-radius:999px;padding:4px 9px;color:var(--muted-dark)}
+  .lh-foot{margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--muted-dark)}
 
   /* PRESS */
-  .press{background:var(--white);text-align:center;padding:90px 0}
-  .press blockquote{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.3rem);color:var(--navy);max-width:820px;margin:0 auto 22px;line-height:1.3;font-style:italic}
-  .press cite{font-style:normal;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--granite)}
-  .press-logos{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;margin-top:50px;color:var(--granite);font-family:var(--serif);font-size:1.4rem;font-weight:600;opacity:.8}
+  .press blockquote{font-family:var(--serif);font-size:clamp(2.2rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.02em;max-width:1150px}
+  .press blockquote::before{content:"“";color:var(--lamp)}
+  .press blockquote::after{content:"”";color:var(--lamp)}
+  .press cite{display:block;margin-top:28px;font-style:normal;color:var(--muted)}
+  .press-2{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:90px;padding-top:40px;border-top:1px solid var(--line)}
+  .press-2 q{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.15;display:block}
+  .press-2 cite{margin-top:16px}
+  .outlets{display:flex;flex-wrap:wrap;gap:10px;align-content:start}
+  .outlets span{border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:500;font-size:.95rem}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,110px)}
+  .about-side{position:sticky;top:110px;align-self:start}
+  .about-side h2{margin-bottom:30px}
+  .about-body p{font-size:1.18rem;color:#3a3d3f;margin-bottom:22px;max-width:640px}
+  .about-body p:first-child{font-size:clamp(1.4rem,2.2vw,1.8rem);line-height:1.3;color:var(--ink);letter-spacing:-.02em;font-weight:500}
+  .facts{display:grid;grid-template-columns:1fr 1fr;margin-top:50px;border-top:1px solid var(--line)}
+  .facts div{padding:22px 0;border-bottom:1px solid var(--line)}
+  .facts div:nth-child(odd){padding-right:20px;border-right:1px solid var(--line)}
+  .facts div:nth-child(even){padding-left:24px}
+  .facts small{display:block;color:var(--muted);margin-bottom:6px}
+  .facts b{font-weight:600;font-size:1.05rem}
+  .sig{font-family:var(--serif);font-style:italic;font-size:2.2rem;margin-top:30px}
 
   /* PROCESS */
-  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;counter-reset:step}
-  .step{border-top:2px solid var(--navy);padding-top:24px}
-  .step::before{counter-increment:step;content:"0" counter(step);font-family:var(--serif);font-size:2.6rem;color:var(--brass);font-weight:600;display:block;line-height:1;margin-bottom:14px}
-  .step h3{font-size:1.4rem;color:var(--navy);margin-bottom:8px}
-  .step p{color:var(--muted);font-size:.95rem}
+  .proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:70px;border-top:1px solid var(--line-dark)}
+  .proc div{padding:34px 28px 10px 0;border-right:1px solid var(--line-dark);padding-left:28px}
+  .proc div:first-child{padding-left:0}
+  .proc div:last-child{border-right:0}
+  .proc .mono{color:var(--lamp)}
+  .proc h3{font-size:1.5rem;font-weight:600;letter-spacing:-.025em;margin:18px 0 10px}
+  .proc p{color:var(--muted-dark);font-size:.97rem}
 
   /* AREA */
-  .area{background:var(--navy-2);color:var(--white)}
-  .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-  .area h2{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:20px}
-  .area p{opacity:.8}
-  .towns{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;list-style:none}
-  .towns li{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);font-family:var(--serif);font-size:1.3rem}
-  .towns li.core{color:var(--mortar)}
-  .towns li.core::after{content:" ●";color:var(--brass);font-size:.6em;vertical-align:middle}
+  .area-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:60px}
+  .area-grid > div > p{color:var(--muted);margin-top:24px;max-width:420px}
+  .towns{list-style:none;columns:2;column-gap:40px}
+  .towns li{font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:500;letter-spacing:-.025em;padding:12px 0;border-bottom:1px solid var(--line);break-inside:avoid;display:flex;justify-content:space-between;align-items:center}
+  .towns li.core::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--lamp)}
+  .towns-key{margin-top:18px;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .towns-key::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lamp)}
 
-  /* CONTACT */
-  .contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:70px}
-  .contact h2{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);margin-bottom:20px}
-  .contact-info{margin-top:34px}
-  .contact-info div{padding:16px 0;border-bottom:1px solid var(--mortar)}
-  .contact-info small{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--granite);margin-bottom:2px}
-  .contact-info a,.contact-info span{font-size:1.1rem;text-decoration:none;color:var(--navy);font-weight:500}
-  form{background:var(--white);padding:44px;box-shadow:0 10px 40px rgba(20,36,58,.08)}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:6px;letter-spacing:.03em}
-  input,select,textarea{width:100%;padding:13px 14px;border:1px solid var(--mortar);background:var(--stone-2);font:inherit;font-size:.97rem;margin-bottom:18px;border-radius:2px;color:var(--ink)}
-  input:focus,select:focus,textarea:focus{outline:2px solid var(--brass);outline-offset:-1px;background:#fff}
-  textarea{min-height:130px;resize:vertical}
-  form .btn{width:100%;border:0}
+  /* FORMS */
+  .form-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,110px)}
+  .form-side p{color:var(--muted);margin-top:24px;max-width:440px}
+  .dark .form-side p{color:var(--muted-dark)}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+  .field{position:relative;margin-bottom:28px}
+  .field label{display:block;color:var(--muted);margin-bottom:6px}
+  .dark .field label{color:var(--muted-dark)}
+  .field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0 12px;font:500 1.12rem var(--sans);color:inherit;border-radius:0;appearance:none;-webkit-appearance:none}
+  .dark .field input,.dark .field select,.dark .field textarea{border-color:var(--line-dark)}
+  .field select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
+  .dark .field select option{color:var(--ink)}
+  .field textarea{min-height:110px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--lamp)}
+  .check{display:flex;gap:12px;align-items:center;margin-bottom:30px;font-size:.95rem;cursor:pointer}
+  .check input{accent-color:var(--lamp);width:18px;height:18px}
+  .submit{display:inline-flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:20px 26px;border-radius:999px;border:0;background:var(--ink);color:var(--bone);font:600 1rem var(--sans);cursor:pointer;transition:.25s}
+  .submit:hover{background:var(--lamp);color:#fff}
+  .dark .submit{background:var(--bone);color:var(--ink)}
+  .dark .submit:hover{background:var(--lamp);color:#fff}
+  .roles{margin-top:40px;border-top:1px solid var(--line-dark)}
+  .roles div{padding:20px 0;border-bottom:1px solid var(--line-dark)}
+  .roles b{display:block;font-size:1.25rem;font-weight:600;letter-spacing:-.02em}
+  .roles span{color:var(--muted-dark);font-size:.95rem}
+  .contact-list{margin-top:44px;border-top:1px solid var(--line)}
+  .contact-list a,.contact-list div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-size:1.15rem;font-weight:500}
+  .contact-list .mono{color:var(--muted)}
+  .contact-list a:hover{color:var(--lamp)}
 
-  .careers{background:var(--stone)}
-  .roles{list-style:none;margin:30px 0}
-  .roles li{padding:18px 0;border-bottom:1px solid var(--mortar)}
-  .roles strong{display:block;font-family:var(--serif);font-size:1.45rem;color:var(--navy);font-weight:600}
-  .roles span{color:var(--muted);font-size:.95rem}
-  .careers .note{font-size:.88rem;color:var(--muted)}
-  .check{display:flex;gap:10px;align-items:center;font-weight:500;font-size:.92rem;margin-bottom:18px}
-  .check input{width:auto;margin:0}
-  footer{background:#0e1a2b;color:rgba(255,255,255,.65);padding:60px 0 30px;font-size:.9rem}
-  .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
-  .foot-grid h4{color:#fff;font-family:var(--serif);font-size:1.25rem;margin-bottom:12px;font-weight:600}
-  .foot-grid a{text-decoration:none;display:block;padding:3px 0}
-  .foot-grid a:hover{color:#fff}
-  .copy{padding-top:26px;font-size:.8rem}
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--bone);padding:80px 0 30px;overflow:hidden}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:60px}
+  .foot-top p{color:var(--muted-dark);max-width:340px}
+  .foot-links{display:flex;gap:70px;flex-wrap:wrap}
+  .foot-links div{display:flex;flex-direction:column;gap:8px}
+  .foot-links .mono{color:var(--muted-dark);margin-bottom:6px}
+  .foot-links a{opacity:.85}
+  .foot-links a:hover{opacity:1;color:var(--lamp)}
+  .wordmark{font-size:clamp(3.4rem,13.5vw,13rem);font-weight:600;letter-spacing:-.06em;line-height:.85;white-space:nowrap;padding:20px 0 30px;border-top:1px solid var(--line-dark)}
+  .wordmark .serif{font-weight:400;color:var(--lamp)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted-dark)}
 
-  .reveal{opacity:0;transform:translateY(24px);transition:.8s ease}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.ticker-track,.dot{animation:none}}
 
-  @media (max-width:960px){
-    .services-grid,.work-grid{grid-template-columns:1fr 1fr}
-    .feature-grid,.legacy-grid,.area-grid,.contact-grid{grid-template-columns:1fr;gap:50px}
-    .process-grid{grid-template-columns:1fr 1fr}
-    .trust-grid{grid-template-columns:1fr 1fr}
-    .trust-item:nth-child(2){border-right:0}
-    .hero-art{opacity:.25;right:-10%}
+  @media (max-width:980px){
+    .hero-grid,.svc-head,.lh-head,.about-grid,.area-grid,.form-grid,.press-2{grid-template-columns:1fr}
+    .hero-photo{aspect-ratio:4/3;max-width:640px}
+    .svc-head p{justify-self:start}
+    .about-side{position:static}
+    .proc{grid-template-columns:1fr 1fr}
+    .proc div:nth-child(2){border-right:0}
+    .proc div:nth-child(3){padding-left:0}
+    .index .scope{display:none}
   }
-  @media (max-width:700px){
+  @media (max-width:720px){
     body{font-size:16px}
-    .wrap{padding:0 16px}
-    section{padding:80px 0}
+    .nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--ink);padding:8px var(--pad) 24px;border-top:1px solid var(--line-dark)}
+    .nav ul.open{display:flex}
+    .nav ul a{display:block;padding:14px 0;font-size:1.1rem;opacity:1;border-bottom:1px solid var(--line-dark)}
+    .nav ul .pill{justify-content:center;margin-top:16px;border:0}
     .menu-btn{display:block}
-    .nav-links{display:none;position:absolute;top:78px;left:0;right:0;flex-direction:column;gap:0;background:var(--navy);padding:10px 0 20px}
-    .nav-links.open{display:flex}
-    .nav-links li{width:100%;text-align:center}
-    .nav-links a{display:block;padding:14px}
-    header{background:rgba(20,36,58,.97)}
-    .services-grid,.work-grid,.process-grid,.row,.towns{grid-template-columns:1fr}
-    form{padding:28px 20px}
+    header{background:rgba(16,18,20,.92)}
+    .hero{padding-top:110px}
+    .hero-meta span:nth-child(2){display:none}
+    .stats{grid-template-columns:1fr}
+    .stat{border-right:0;border-bottom:1px solid var(--line-dark);padding:24px 0;display:flex;align-items:baseline;gap:16px}
+    .stat span{margin:0}
+    .svc-row{grid-template-columns:40px 1fr;gap:6px 14px}
+    .svc-row p{grid-column:2}
+    .svc-row .go{display:none}
+    .svc-row:hover{padding-left:0;padding-right:0;background:none}
+    .index thead{display:none}
+    .index tr{display:grid;grid-template-columns:44px 1fr}
+    .index td{padding:6px 0;border:0}
+    .index tr{padding:22px 0;border-bottom:1px solid var(--line-dark)}
+    .index .num{grid-row:span 2;padding-top:10px}
+    .index .loc{white-space:normal}
+    .proc{grid-template-columns:1fr}
+    .proc div{border-right:0;padding-left:0;border-bottom:1px solid var(--line-dark);padding-bottom:28px}
+    .towns{columns:1}
+    form .row{grid-template-columns:1fr}
+    .facts{grid-template-columns:1fr}
+    .facts div:nth-child(odd){border-right:0;padding-right:0}
+    .facts div:nth-child(even){padding-left:0}
+    .foot-links{gap:40px}
   }
 </style>
 </head>
 <body>
 
-<header id="top">
+<header>
   <div class="wrap nav">
-    <a href="#" class="logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" stroke="#cfc6b6" stroke-width="1.6">
-        <rect x="1" y="1" width="38" height="38"/>
-        <path d="M1 14h38M1 27h38M14 1v13M27 14v13M20 27v12"/>
-      </svg>
-      <span class="logo-text">J. Nally &amp; Co.<small>Masonry &amp; Restoration</small></span>
+    <a href="#" class="brand">
+      <svg class="brand-mark" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5"><rect x=".75" y=".75" width="24.5" height="24.5"/><path d="M.75 9.25h24.5M.75 17.25h24.5M9 .75v8.5M17 9.25v8M13 17.25v8"/></svg>
+      J. Nally &amp; Co.
     </a>
-    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <ul class="nav-links">
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">Menu</button>
+    <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#lighthouses">Lighthouses</a></li>
-      <li><a href="#work">Our Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#careers">Careers</a></li>
-      <li><a href="#contact" class="btn btn-primary">Request a Consultation</a></li>
+      <li><a href="#contact" class="pill">Start a project <span class="arr">→</span></a></li>
     </ul>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <svg class="hero-art" viewBox="0 0 400 600" fill="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="beamG" x1="0" x2="1">
-        <stop offset="0" stop-color="#f7e6b5" stop-opacity=".9"/>
-        <stop offset="1" stop-color="#f7e6b5" stop-opacity="0"/>
-      </linearGradient>
-    </defs>
-    <polygon class="beam" points="200,118 400,60 400,180" fill="url(#beamG)"/>
-    <!-- lantern -->
-    <path d="M176 92 L200 66 L224 92 Z" fill="#0e1a2b" stroke="#cfc6b6" stroke-width="2"/>
-    <rect x="180" y="92" width="40" height="40" fill="#f7e6b5" stroke="#cfc6b6" stroke-width="2"/>
-    <path d="M193 92v40M207 92v40" stroke="#cfc6b6" stroke-width="1.5"/>
-    <rect x="168" y="132" width="64" height="8" fill="#0e1a2b" stroke="#cfc6b6" stroke-width="2"/>
-    <!-- tower -->
-    <path d="M176 140 L158 540 L242 540 L224 140 Z" fill="#e9e4da" stroke="#cfc6b6" stroke-width="2"/>
-    <g stroke="#cfc6b6" stroke-width="1" opacity=".9">
-      <path d="M175 180h50M173 220h54M171 260h58M169 300h62M168 340h64M166 380h68M164 420h72M162 460h76M160 500h80"/>
-      <path d="M200 140v40M188 180v40M212 180v40M200 220v40M186 260v40M214 260v40M200 300v40M184 340v40M216 340v40M200 380v40M182 420v40M218 420v40M200 460v40M180 500v40M220 500v40"/>
-    </g>
-    <rect x="193" y="250" width="14" height="22" fill="#14243a"/>
-    <rect x="193" y="380" width="14" height="22" fill="#14243a"/>
-    <path d="M188 540v-34a12 12 0 0 1 24 0v34" fill="#14243a"/>
-    <!-- rocks -->
-    <path d="M60 600 L90 548 L140 536 L170 540 L230 538 L270 546 L320 534 L360 560 L400 600 Z" fill="#4c5157" stroke="#6f7479" stroke-width="2"/>
-    <path d="M110 600 L130 566 L180 556 L210 572 L250 560 L300 580 L320 600Z" fill="#3b4045"/>
-  </svg>
-
+<section class="hero" style="padding-bottom:0">
   <div class="wrap">
-    <div class="hero-content">
-      <div class="eyebrow">Manchester-by-the-Sea · Gloucester · Beverly Farms</div>
-      <h1>Stonework built to <em>outlast</em> the Atlantic.</h1>
-      <p>Historic masonry, lighthouse restoration and fine stonework on Massachusetts' North Shore. Trusted by the U.S. Coast Guard, featured in <i>The Boston Globe</i>, with more than 30 years of preservation work.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Request a Consultation</a>
-        <a href="#work" class="btn btn-ghost">View Our Work</a>
+    <div class="hero-meta mono">
+      <span><span class="dot"></span>Restoring the New England coast</span>
+      <span>Manchester-by-the-Sea, MA · 42.57° N, 70.77° W</span>
+      <span>Preservation Masonry</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1>Stonework built to <span class="serif">outlast</span> the Atlantic.</h1>
+        <p class="hero-lede">Historic masonry and lighthouse restoration on Massachusetts' North Shore by <strong>Martin J. Nally</strong>: trusted by the U.S. Coast Guard and featured in <strong><i>The Boston Globe</i></strong>.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="pill">Request a consultation <span class="arr">→</span></a>
+          <a href="#lighthouses" class="ghost">See the lighthouses</a>
+        </div>
       </div>
+      <figure class="hero-photo">
+        <img src="images/dad.avif" alt="Marty Nally laying stone on a North Shore job site" onerror="this.parentNode.classList.add('missing')">
+        <figcaption class="mono"><span>Marty Nally</span><span>On site</span></figcaption>
+      </figure>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>30+</b><span>Years of historic restoration</span></div>
+      <div class="stat"><b>20+</b><span>Lighthouse projects for the U.S. Coast Guard</span></div>
+      <div class="stat"><b>1</b><span>Standard: no shortcuts</span></div>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust">
-  <div class="wrap trust-grid">
-    <div class="trust-item"><strong>20+ Lighthouse Projects</strong><span>For the U.S. Coast Guard</span></div>
-    <div class="trust-item"><strong>The Boston Globe</strong><span>As Featured In</span></div>
-    <div class="trust-item"><strong>30+ Years</strong><span>Historic Restoration</span></div>
-    <div class="trust-item"><strong>Licensed &amp; Insured</strong><span>Massachusetts</span></div>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Manchester-by-the-Sea</span><span>Gloucester</span><span>Beverly Farms</span><span>Rockport</span><span>Prides Crossing</span><span>Essex</span><span>Ipswich</span><span>Hamilton</span><span>Wenham</span><span>Marblehead</span><span>Salem</span>
+    <span>Manchester-by-the-Sea</span><span>Gloucester</span><span>Beverly Farms</span><span>Rockport</span><span>Prides Crossing</span><span>Essex</span><span>Ipswich</span><span>Hamilton</span><span>Wenham</span><span>Marblehead</span><span>Salem</span>
   </div>
 </div>
 
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <div class="label mono">Introduction</div>
+    <p class="reveal">For more than thirty years, Marty Nally has been the mason New England calls when the work <span class="serif">really matters</span>: <span class="dim">lighthouse towers battered by the North Atlantic, landmark homes in Beverly Farms, and the old stone walls and seawalls of Cape Ann.</span></p>
+  </div>
+</section>
+
 <!-- SERVICES -->
-<section id="services">
+<section id="services" style="padding-top:0">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">What We Do</div>
-      <h2>Restoration-grade masonry, done the old way.</h2>
-      <p>We use period-correct materials and traditional methods, the same care whether it's a 19th-century lighthouse tower or the stone wall at the end of your drive.</p>
+    <div class="svc-head">
+      <div>
+        <div class="label mono">Services</div>
+        <h2 class="reveal">Restoration-grade<br>masonry, <span class="serif">done the old way.</span></h2>
+      </div>
+      <p class="reveal">Period-correct materials and traditional methods, with the same care for a 19th-century lighthouse tower or the wall at the end of your drive.</p>
     </div>
-    <div class="services-grid reveal">
-      <div class="service featured">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 14l6-8 6 8zM19 14h10v8H19zM19 22l-4 22h18l-4-22"/><path d="M8 10l8 6M40 10l-8 6"/></svg>
-        <h3>Lighthouse &amp; Maritime Restoration</h3>
-        <p>Experience on more than 20 lighthouse projects across New England for the U.S. Coast Guard, plus preservation groups like Essex Heritage.</p>
-      </div>
-      <div class="service">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 42V18L24 6l18 12v24z"/><path d="M6 26h36M6 34h36M15 18v8M33 18v8M24 26v8M15 34v8M33 34v8"/></svg>
-        <h3>Historic Restoration</h3>
-        <p>Careful preservation of period homes, estates and landmarks. Lime mortar, matched stone and brick, and respect for the original craftsmanship.</p>
-      </div>
-      <div class="service">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 38h40M6 38c0-6 4-8 8-8s6 3 10 3 6-5 10-5 8 4 8 10"/><path d="M8 30c1-5 5-6 8-6M26 28c2-4 6-5 10-4"/></svg>
-        <h3>Stone Walls</h3>
-        <p>New England dry-laid and mortared fieldstone and granite walls, built new or rebuilt to match what's been there for a century.</p>
-      </div>
-      <div class="service">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 6h16v36H16z"/><path d="M14 6h20M16 14h16M16 22h16M16 30h16M24 6v8M20 14v8M28 14v8M24 22v8M20 30v12M28 30v12"/></svg>
-        <h3>Chimneys &amp; Fireplaces</h3>
-        <p>Chimney rebuilds, crown repair and flashing, plus custom stone and brick fireplaces built to draw well and last.</p>
-      </div>
-      <div class="service">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h40v24H4z"/><path d="M4 24h40M18 12v12M32 12v12M11 24v12M25 24v12M39 24v12"/><path d="M36 6l6 6" stroke-dasharray="2 2"/></svg>
-        <h3>Repointing &amp; Repair</h3>
-        <p>Proper repointing, foundation repair and stone replacement that stops water damage without harming old masonry.</p>
-      </div>
-      <div class="service">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 34l20-10 20 10-20 10z"/><path d="M14 29l20 10M34 29L14 39M10 22h8v-8h12v8h8"/></svg>
-        <h3>Patios, Steps &amp; Walkways</h3>
-        <p>Granite steps, bluestone patios and cobblestone drives designed for coastal weather and built to frame the home.</p>
-      </div>
-      <div class="service">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 40V16h18v24"/><path d="M4 24h18M4 32h18M13 16v8M13 32v8"/><path d="M22 30c4-3 7 3 11 0s7 3 11 0M22 38c4-3 7 3 11 0s7 3 11 0"/></svg>
-        <h3>Seawalls &amp; Marine Masonry</h3>
-        <p>Seawalls, jetties and waterfront stonework built and repaired to stand up to tide, storm surge and salt.</p>
-      </div>
-      <div class="service">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="12"/><path d="M29 29l13 13M14 18h12M14 23h8"/></svg>
-        <h3>Masonry Investigations</h3>
-        <p>Condition assessments of failing walls, towers and foundations for owners, architects and preservation groups.</p>
-      </div>
+    <div class="svc">
+      <div class="svc-row flag reveal"><span class="n mono">01</span><h3>Lighthouse &amp; Maritime</h3><p>Restoration of lighthouse towers, keepers' houses and coastal structures, including more than 20 projects for the U.S. Coast Guard.</p><span class="go">→</span></div>
+      <div class="svc-row reveal"><span class="n mono">02</span><h3>Historic Restoration</h3><p>Preservation of period homes, estates and landmarks with lime mortar, matched stone and brick.</p><span class="go">→</span></div>
+      <div class="svc-row reveal"><span class="n mono">03</span><h3>Seawalls &amp; Marine Masonry</h3><p>Seawalls, jetties and waterfront stonework built to stand up to tide, storm surge and salt.</p><span class="go">→</span></div>
+      <div class="svc-row reveal"><span class="n mono">04</span><h3>Stone Walls</h3><p>Dry-laid and mortared fieldstone and granite walls, built new or rebuilt to match a century of history.</p><span class="go">→</span></div>
+      <div class="svc-row reveal"><span class="n mono">05</span><h3>Chimneys &amp; Fireplaces</h3><p>Chimney rebuilds, crowns and flashing, plus custom stone and brick fireplaces that draw well and last.</p><span class="go">→</span></div>
+      <div class="svc-row reveal"><span class="n mono">06</span><h3>Repointing &amp; Repair</h3><p>Proper repointing, foundation repair and stone replacement that stops water without harming old masonry.</p><span class="go">→</span></div>
+      <div class="svc-row reveal"><span class="n mono">07</span><h3>Patios, Steps &amp; Walkways</h3><p>Granite steps, bluestone patios and cobblestone drives built for coastal New England weather.</p><span class="go">→</span></div>
+      <div class="svc-row reveal"><span class="n mono">08</span><h3>Masonry Investigations</h3><p>Condition assessments of failing walls, towers and foundations for owners, architects and preservation groups.</p><span class="go">→</span></div>
     </div>
   </div>
 </section>
 
-<!-- LIGHTHOUSE FEATURE -->
-<section class="feature" id="lighthouses">
-  <div class="wrap feature-grid">
-    <div class="photo-slot reveal">Replace with your best lighthouse photo<br>(before/after works great)</div>
-    <div class="reveal">
-      <div class="eyebrow">Signature Work</div>
-      <h2>Restoring the lights that guard the coast.</h2>
-      <p>Few masons are trusted with a lighthouse. These towers take everything the North Atlantic throws at them: salt, ice, wind and constant freeze-thaw. Restoring them takes engineering judgment, historical accuracy and old-school hand skill.</p>
-      <p>Marty Nally has worked on about 20 lighthouse projects for the U.S. Coast Guard, plus others for preservation groups. The jobs include replacing thousands of bricks by hand and flying materials out to an island by helicopter. That same standard goes into every private home we work on.</p>
-      <ul>
-        <li>Bakers Island Light Station, Salem</li>
-        <li>Annisquam Harbor Light, Gloucester</li>
-        <li>Brant Point Light, Nantucket <small style="opacity:.6">(site supervisor)</small></li>
-        <li>Point Judith Light, Rhode Island <small style="opacity:.6">(site supervisor)</small></li>
-      </ul>
-      <a href="#contact" class="btn btn-primary">Discuss a Historic Project</a>
-    </div>
-  </div>
-</section>
-
-<!-- WORK -->
-<section id="work">
+<!-- LIGHTHOUSES -->
+<section class="dark" id="lighthouses">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Selected Projects</div>
-      <h2>Work you'll find all over Cape Ann.</h2>
-      <p>A selection of recent and landmark projects from Gloucester to Beverly Farms.</p>
+    <div class="lh-head">
+      <div>
+        <div class="label mono">Selected lighthouse work</div>
+        <h2 class="reveal">Restoring the lights that <span class="serif">guard the coast.</span></h2>
+      </div>
+      <p class="reveal">Few masons are trusted with a lighthouse. These towers take salt, ice, wind and constant freeze-thaw, and restoring them takes engineering judgment, historical accuracy and hand skill. Some jobs meant replacing thousands of bricks by hand; one meant flying materials out to an island by helicopter.</p>
     </div>
-    <div class="work-grid">
-      <article class="work-card reveal">
-        <div class="work-img"><span>Project photo</span></div>
-        <div class="work-body"><div class="work-tag">Lighthouse · Salem</div><h3>Bakers Island Light Station</h3><p>Repeated restorations of this island light. The 2025 work for Essex Heritage covered full interior repointing of the tower and rebuilding three chimneys on the keepers' houses.</p></div>
-      </article>
-      <article class="work-card reveal">
-        <div class="work-img"><span>Project photo</span></div>
-        <div class="work-body"><div class="work-tag">Lighthouse · Gloucester</div><h3>Annisquam Harbor Light</h3><p>A restoration of the brick tower at the mouth of the Annisquam River, replacing roughly 3,000 bricks by hand.</p></div>
-      </article>
-      <article class="work-card reveal">
-        <div class="work-img"><span>Project photo</span></div>
-        <div class="work-body"><div class="work-tag">Lighthouse · Rhode Island</div><h3>Point Judith Light</h3><p>Marty led this U.S. Coast Guard restoration as site supervisor and mason. It was one of the toughest: soft brownstone that weathers badly.</p></div>
-      </article>
+    <table class="index">
+      <thead><tr><th>No.</th><th>Light</th><th>Location</th><th>Scope</th></tr></thead>
+      <tbody>
+        <tr class="reveal"><td class="num">01</td><td><div class="lh-name">Bakers Island Light Station</div><span class="tag">Essex Heritage · 2025</span></td><td class="loc">Salem, MA</td><td class="scope">Restoration of the island light station, including full interior repointing of the tower and rebuilding three chimneys on the keepers' houses.</td></tr>
+        <tr class="reveal"><td class="num">02</td><td><div class="lh-name">Annisquam Harbor Light</div><span class="tag">2000</span></td><td class="loc">Gloucester, MA</td><td class="scope">Brick tower restoration at the mouth of the Annisquam River, with roughly 3,000 bricks replaced by hand.</td></tr>
+        <tr class="reveal"><td class="num">03</td><td><div class="lh-name">Point Judith Light</div><span class="tag">Site supervisor</span></td><td class="loc">Narragansett, RI</td><td class="scope">U.S. Coast Guard restoration of a soft brownstone tower, one of the hardest materials on the coast to restore.</td></tr>
+        <tr class="reveal"><td class="num">04</td><td><div class="lh-name">Brant Point Light</div><span class="tag">Site supervisor</span></td><td class="loc">Nantucket, MA</td><td class="scope">U.S. Coast Guard restoration of one of the most recognizable lights in New England.</td></tr>
+      </tbody>
+    </table>
+    <div class="lh-foot">
+      <span class="mono">+ more than a dozen other Coast Guard and preservation projects</span>
+      <a href="#contact" class="pill">Discuss a historic project <span class="arr">→</span></a>
     </div>
   </div>
 </section>
 
 <!-- PRESS -->
-<div class="press">
-  <div class="wrap reveal">
-    <div class="eyebrow">In the Press</div>
-    <blockquote>"You have to use your brain. If you don't, you're going to get in trouble."</blockquote>
-    <cite>Marty Nally, in <i>The Boston Globe</i> · 2018</cite>
-    <blockquote style="font-size:clamp(1.3rem,2.4vw,1.7rem);margin-top:46px">"Marty always wanted to do it the right way. He didn't take shortcuts."</blockquote>
-    <cite>U.S. Coast Guard inspector, in <i>Northshore Magazine</i></cite>
-    <div class="press-logos"><span>The Boston Globe</span><span>Northshore Magazine</span><span>Lighthouse Digest</span><span>Essex Heritage</span></div>
+<section class="press">
+  <div class="wrap">
+    <div class="label mono">In the press</div>
+    <blockquote class="reveal">You have to use your brain. If you don't, you're going to get in trouble.</blockquote>
+    <cite class="mono">Marty Nally · The Boston Globe, 2018</cite>
+    <div class="press-2">
+      <div class="reveal">
+        <q>Marty always wanted to do it the right way. He didn't take shortcuts.</q>
+        <cite class="mono">U.S. Coast Guard inspector · Northshore Magazine</cite>
+      </div>
+      <div class="outlets reveal">
+        <span>The Boston Globe</span><span>Northshore Magazine</span><span>Lighthouse Digest</span><span>Essex Heritage</span><span>U.S. Coast Guard</span>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- LEGACY / ABOUT -->
-<section class="legacy" id="about">
-  <div class="wrap legacy-grid">
-    <figure class="portrait reveal">
-      <img src="images/dad.avif" alt="J. Nally setting stone on a North Shore job site" onerror="this.parentNode.classList.add('missing')">
-      <span class="portrait-fallback">Photo coming soon</span>
-    </figure>
-    <div class="reveal">
-      <div class="eyebrow">Our Story</div>
-      <h2>A craft learned from his father.</h2>
-      <p>Martin J. "Marty" Nally learned masonry from his father, a mason who came over from Ireland. Over more than 30 years he has become the preservation mason New England calls when the work matters: about 20 lighthouse projects for the U.S. Coast Guard, landmark homes in Beverly Farms and Manchester-by-the-Sea, and old walls and seawalls across Cape Ann.</p>
+<!-- ABOUT -->
+<section id="about" style="background:var(--bone-2)">
+  <div class="wrap about-grid">
+    <div class="about-side">
+      <div class="label mono">About</div>
+      <h2 class="reveal">A craft learned from <span class="serif">his father.</span></h2>
+      <div class="sig">— Marty Nally</div>
+    </div>
+    <div class="about-body reveal">
+      <p>Martin J. "Marty" Nally learned masonry from his father, a mason who came over from Ireland.</p>
+      <p>Over more than 30 years he has become the preservation mason New England calls when the work matters: about 20 lighthouse projects for the U.S. Coast Guard, landmark homes in Beverly Farms and Manchester-by-the-Sea, and old walls and seawalls across Cape Ann.</p>
       <p>His work has been featured in <i>The Boston Globe</i> and <i>Northshore Magazine</i>, and he still leads restoration work today, including the 2025 Bakers Island Light project for Essex Heritage.</p>
       <p>Every job still gets the same thing: hands-on craftsmanship, respect for old stone, and work built to last another hundred years.</p>
-      <div class="signature">— Marty Nally</div>
+      <div class="facts">
+        <div><small class="mono">Based in</small><b>Manchester-by-the-Sea, MA</b></div>
+        <div><small class="mono">Experience</small><b>30+ years</b></div>
+        <div><small class="mono">Specialty</small><b>Historic &amp; lighthouse restoration</b></div>
+        <div><small class="mono">Also</small><b>Seawalls &amp; investigations</b></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section>
+<section class="dark">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">How We Work</div>
-      <h2>Straightforward from first visit to final stone.</h2>
-    </div>
-    <div class="process-grid reveal">
-      <div class="step"><h3>Site Visit</h3><p>We walk the property with you, look at the existing masonry, and talk through what you want.</p></div>
-      <div class="step"><h3>Honest Assessment</h3><p>A clear explanation of what's needed and what isn't, with a written proposal.</p></div>
-      <div class="step"><h3>Craftsmanship</h3><p>Traditional methods and matched materials, with an owner on site.</p></div>
-      <div class="step"><h3>Built to Last</h3><p>Work that holds up to coastal New England weather for generations.</p></div>
+    <div class="label mono">Process</div>
+    <h2 class="reveal">Straightforward, from first visit <span class="serif">to final stone.</span></h2>
+    <div class="proc reveal">
+      <div><span class="mono">Step 01</span><h3>Site visit</h3><p>We walk the property with you, look at the existing masonry and talk through what you want.</p></div>
+      <div><span class="mono">Step 02</span><h3>Honest assessment</h3><p>A clear explanation of what's needed and what isn't, with a written proposal.</p></div>
+      <div><span class="mono">Step 03</span><h3>Craftsmanship</h3><p>Traditional methods and matched materials, with Marty on site.</p></div>
+      <div><span class="mono">Step 04</span><h3>Built to last</h3><p>Work that holds up to coastal New England weather for generations.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICE AREA -->
-<section class="area">
+<!-- AREA -->
+<section>
   <div class="wrap area-grid">
-    <div class="reveal">
-      <div class="eyebrow">Service Area</div>
-      <h2>Rooted on the North Shore.</h2>
-      <p>Based in Manchester-by-the-Sea and serving Cape Ann and the North Shore, with a focus on the historic coastal towns we know stone by stone. For significant restoration and lighthouse work, we travel further.</p>
+    <div>
+      <div class="label mono">Service area</div>
+      <h2 class="reveal">Rooted on the <span class="serif">North Shore.</span></h2>
+      <p>Based in Manchester-by-the-Sea and serving Cape Ann and the North Shore. For significant restoration and lighthouse work, we travel throughout New England.</p>
     </div>
-    <ul class="towns reveal">
-      <li class="core">Manchester-by-the-Sea</li>
-      <li class="core">Gloucester</li>
-      <li class="core">Beverly Farms</li>
-      <li>Rockport</li>
-            <li>Prides Crossing</li>
-      <li>Essex</li>
-      <li>Ipswich</li>
-      <li>Hamilton &amp; Wenham</li>
-      <li>Beverly &amp; Salem</li>
-      <li>Marblehead</li>
-    </ul>
+    <div class="reveal">
+      <ul class="towns">
+        <li class="core">Manchester-by-the-Sea</li>
+        <li class="core">Gloucester</li>
+        <li class="core">Beverly Farms</li>
+        <li>Rockport</li>
+        <li>Prides Crossing</li>
+        <li>Essex</li>
+        <li>Ipswich</li>
+        <li>Hamilton &amp; Wenham</li>
+        <li>Beverly &amp; Salem</li>
+        <li>Marblehead</li>
+      </ul>
+      <div class="towns-key mono">Primary service area</div>
+    </div>
   </div>
 </section>
 
 <!-- CAREERS -->
-<section class="careers" id="careers">
-  <div class="wrap contact-grid">
-    <div class="reveal">
-      <div class="eyebrow">Careers</div>
-      <h2 style="font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);margin-bottom:20px">Join the crew.</h2>
-      <p style="color:var(--muted)">We're always looking for hardworking people who take pride in their work. Experienced or just starting out, if you want to learn real restoration masonry on some of the most historic structures in New England, we'd like to hear from you.</p>
-      <ul class="roles">
-        <li><strong>Experienced Mason</strong><span>Stone, brick and restoration work. Experience with lime mortar and repointing is a plus.</span></li>
-        <li><strong>Mason Tender / Laborer</strong><span>Mixing, staging, hauling and site work. A good way into the trade.</span></li>
-        <li><strong>Apprentice</strong><span>No experience needed. Show up on time, work hard and want to learn, and we'll teach you.</span></li>
-      </ul>
-      <p class="note">Jobs are based around the North Shore and Cape Ann. Reliable transportation required.</p>
+<section class="dark" id="careers">
+  <div class="wrap form-grid">
+    <div class="form-side">
+      <div class="label mono">Careers</div>
+      <h2 class="reveal">Join <span class="serif">the crew.</span></h2>
+      <p>We're always looking for hardworking people who take pride in their work. Experienced or just starting out, if you want to learn real restoration masonry on some of the most historic structures in New England, we'd like to hear from you.</p>
+      <div class="roles">
+        <div><b>Experienced Mason</b><span>Stone, brick and restoration work. Lime mortar and repointing experience is a plus.</span></div>
+        <div><b>Mason Tender / Laborer</b><span>Mixing, staging, hauling and site work. A good way into the trade.</span></div>
+        <div><b>Apprentice</b><span>No experience needed. Show up on time, work hard and want to learn, and we'll teach you.</span></div>
+      </div>
     </div>
-    <form class="reveal" id="apply-form">
+    <form id="apply-form" class="reveal">
       <div class="row">
-        <div><label for="a-name">Full Name</label><input id="a-name" required></div>
-        <div><label for="a-phone">Phone</label><input id="a-phone" type="tel" required></div>
+        <div class="field"><label class="mono" for="a-name">Full name</label><input id="a-name" required></div>
+        <div class="field"><label class="mono" for="a-phone">Phone</label><input id="a-phone" type="tel" required></div>
       </div>
       <div class="row">
-        <div><label for="a-email">Email</label><input id="a-email" type="email"></div>
-        <div><label for="a-town">Town You Live In</label><input id="a-town"></div>
+        <div class="field"><label class="mono" for="a-email">Email</label><input id="a-email" type="email"></div>
+        <div class="field"><label class="mono" for="a-town">Town you live in</label><input id="a-town"></div>
       </div>
       <div class="row">
-        <div>
-          <label for="a-role">Position</label>
-          <select id="a-role">
-            <option>Experienced Mason</option>
-            <option>Mason Tender / Laborer</option>
-            <option>Apprentice</option>
-            <option>Not sure / Open to anything</option>
-          </select>
-        </div>
-        <div>
-          <label for="a-exp">Years of Experience</label>
-          <select id="a-exp">
-            <option>None, ready to learn</option>
-            <option>Less than 1 year</option>
-            <option>1 to 3 years</option>
-            <option>3 to 10 years</option>
-            <option>10+ years</option>
-          </select>
-        </div>
+        <div class="field"><label class="mono" for="a-role">Position</label>
+          <select id="a-role"><option>Experienced Mason</option><option>Mason Tender / Laborer</option><option>Apprentice</option><option>Not sure / Open to anything</option></select></div>
+        <div class="field"><label class="mono" for="a-exp">Experience</label>
+          <select id="a-exp"><option>None, ready to learn</option><option>Less than 1 year</option><option>1 to 3 years</option><option>3 to 10 years</option><option>10+ years</option></select></div>
       </div>
       <label class="check"><input type="checkbox" id="a-license"> I have a valid driver's license and reliable transportation</label>
-      <label for="a-msg">Tell us about yourself</label>
-      <textarea id="a-msg" placeholder="Past jobs, the kind of work you've done, when you can start..."></textarea>
-      <button class="btn btn-primary" type="submit">Submit Application</button>
+      <div class="field"><label class="mono" for="a-msg">Tell us about yourself</label><textarea id="a-msg" placeholder="Past jobs, the kind of work you've done, when you can start…"></textarea></div>
+      <button class="submit" type="submit">Submit application <span>→</span></button>
     </form>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div class="reveal">
-      <div class="eyebrow">Get in Touch</div>
-      <h2>Let's talk about your project.</h2>
-      <p style="color:var(--muted)">Tell us a little about the work and we'll set up a time to come see it.</p>
-      <div class="contact-info">
-        <div><small>Phone</small><a href="tel:+19780000000">(978) 000-0000</a></div>
-        <div><small>Email</small><a href="mailto:info@jnallymasonry.com">info@jnallymasonry.com</a></div>
-        <div><small>Based In</small><span>Manchester-by-the-Sea, Massachusetts</span></div>
-        <div><small>Web</small><span>jnallymasonry.com</span></div>
+<section id="contact">
+  <div class="wrap form-grid">
+    <div class="form-side">
+      <div class="label mono">Contact</div>
+      <h2 class="reveal">Let's talk about <span class="serif">your project.</span></h2>
+      <p>Tell us a little about the work and we'll set up a time to come see it.</p>
+      <div class="contact-list">
+        <a href="tel:+19780000000"><span class="mono">Phone</span>(978) 000-0000</a>
+        <a href="mailto:info@jnallymasonry.com"><span class="mono">Email</span>info@jnallymasonry.com</a>
+        <div><span class="mono">Based in</span>Manchester-by-the-Sea, MA</div>
       </div>
     </div>
-    <form class="reveal" id="quote-form">
+    <form id="quote-form" class="reveal">
       <div class="row">
-        <div><label for="name">Name</label><input id="name" required></div>
-        <div><label for="phone">Phone</label><input id="phone" type="tel"></div>
+        <div class="field"><label class="mono" for="name">Name</label><input id="name" required></div>
+        <div class="field"><label class="mono" for="phone">Phone</label><input id="phone" type="tel"></div>
       </div>
       <div class="row">
-        <div><label for="email">Email</label><input id="email" type="email" required></div>
-        <div><label for="town">Town</label><input id="town" placeholder="e.g. Gloucester"></div>
+        <div class="field"><label class="mono" for="email">Email</label><input id="email" type="email" required></div>
+        <div class="field"><label class="mono" for="town">Town</label><input id="town" placeholder="e.g. Gloucester"></div>
       </div>
-      <label for="type">Type of Project</label>
-      <select id="type">
-        <option>Historic restoration</option>
-        <option>Lighthouse / maritime</option>
-        <option>Stone wall</option>
-        <option>Chimney or fireplace</option>
-        <option>Repointing / repair</option>
-        <option>Patio, steps or walkway</option>
-        <option>Something else</option>
-      </select>
-      <label for="msg">Tell us about it</label>
-      <textarea id="msg" placeholder="What's the project, roughly how big, and when are you hoping to start?"></textarea>
-      <button class="btn btn-primary" type="submit">Request a Consultation</button>
+      <div class="field"><label class="mono" for="type">Type of project</label>
+        <select id="type"><option>Historic restoration</option><option>Lighthouse / maritime</option><option>Seawall / marine masonry</option><option>Stone wall</option><option>Chimney or fireplace</option><option>Repointing / repair</option><option>Patio, steps or walkway</option><option>Masonry investigation</option><option>Something else</option></select></div>
+      <div class="field"><label class="mono" for="msg">Tell us about it</label><textarea id="msg" placeholder="What's the project, roughly how big, and when are you hoping to start?"></textarea></div>
+      <button class="submit" type="submit">Request a consultation <span>→</span></button>
     </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <h4>J. Nally &amp; Company</h4>
-        <p>Historic masonry &amp; lighthouse restoration<br>Martin J. Nally, Preservation Mason<br>Manchester-by-the-Sea, Massachusetts</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="#careers">Careers</a>
-        <a href="#lighthouses">Lighthouse Restoration</a>
-        <a href="#services">Historic Restoration</a>
-        <a href="#services">Stone Walls</a>
-        <a href="#services">Chimneys &amp; Fireplaces</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="tel:+19780000000">(978) 000-0000</a>
-        <a href="mailto:info@jnallymasonry.com">info@jnallymasonry.com</a>
+    <div class="foot-top">
+      <p>Preservation masonry and lighthouse restoration by Martin J. Nally. Manchester-by-the-Sea, Massachusetts.</p>
+      <div class="foot-links">
+        <div><span class="mono">Site</span><a href="#services">Services</a><a href="#lighthouses">Lighthouses</a><a href="#about">About</a><a href="#careers">Careers</a></div>
+        <div><span class="mono">Contact</span><a href="tel:+19780000000">(978) 000-0000</a><a href="mailto:info@jnallymasonry.com">info@jnallymasonry.com</a></div>
       </div>
     </div>
-    <div class="copy">© <span id="yr"></span> J. Nally &amp; Company. All rights reserved.</div>
+    <div class="wordmark">J. Nally <span class="serif">&amp;</span> Co.</div>
+    <div class="foot-bottom mono"><span>© <span id="yr"></span> J. Nally &amp; Company</span><span>jnallymasonry.com</span></div>
   </div>
 </footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   const header = document.querySelector('header');
-  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 40));
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () =>
-    document.querySelector('.nav-links').classList.remove('open')));
+  const onScroll = () => header.classList.toggle('scrolled', scrollY > 30);
+  addEventListener('scroll', onScroll); onScroll();
+  document.querySelectorAll('.nav ul a').forEach(a => a.addEventListener('click', () =>
+    document.querySelector('.nav ul').classList.remove('open')));
 
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Until a form service (Formspree, Netlify Forms, etc.) is connected, this opens the visitor's email app.
+  // Forms open the visitor's email app until a form service is connected.
+  const v = id => document.getElementById(id).value;
+  const send = (subject, body) => location.href =
+    `mailto:info@jnallymasonry.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
   document.getElementById('apply-form').addEventListener('submit', e => {
     e.preventDefault();
-    const v = id => document.getElementById(id).value;
-    const body = `Name: ${v('a-name')}\nPhone: ${v('a-phone')}\nEmail: ${v('a-email')}\nTown: ${v('a-town')}\nPosition: ${v('a-role')}\nExperience: ${v('a-exp')}\nDriver's license & transportation: ${document.getElementById('a-license').checked ? 'Yes' : 'No'}\n\n${v('a-msg')}`;
-    location.href = `mailto:info@jnallymasonry.com?subject=${encodeURIComponent('Job application - ' + v('a-role') + ' - ' + v('a-name'))}&body=${encodeURIComponent(body)}`;
+    send(`Job application - ${v('a-role')} - ${v('a-name')}`,
+      `Name: ${v('a-name')}\nPhone: ${v('a-phone')}\nEmail: ${v('a-email')}\nTown: ${v('a-town')}\nPosition: ${v('a-role')}\nExperience: ${v('a-exp')}\nDriver's license & transportation: ${document.getElementById('a-license').checked ? 'Yes' : 'No'}\n\n${v('a-msg')}`);
   });
-
   document.getElementById('quote-form').addEventListener('submit', e => {
     e.preventDefault();
-    const v = id => document.getElementById(id).value;
-    const body = `Name: ${v('name')}\nPhone: ${v('phone')}\nEmail: ${v('email')}\nTown: ${v('town')}\nProject: ${v('type')}\n\n${v('msg')}`;
-    location.href = `mailto:info@jnallymasonry.com?subject=${encodeURIComponent('Consultation request - ' + v('type'))}&body=${encodeURIComponent(body)}`;
+    send(`Consultation request - ${v('type')}`,
+      `Name: ${v('name')}\nPhone: ${v('phone')}\nEmail: ${v('email')}\nTown: ${v('town')}\nProject: ${v('type')}\n\n${v('msg')}`);
   });
 </script>
 </body>
