@@ -154,13 +154,19 @@
   /* ---------- LIGHTHOUSES ---------- */
   .lh{background:var(--char-2)}
   .lh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
-  .lh-card{background:var(--char-2);padding:clamp(28px,3.4vw,44px);display:flex;flex-direction:column;gap:12px;transition:background .3s}
+  .lh-card{--p:clamp(28px,3.4vw,44px);background:var(--char-2);padding:var(--p);display:flex;flex-direction:column;gap:12px;transition:background .3s}
   .lh-card:hover{background:var(--char-3)}
   .lh-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-on-dark)}
   .lh-top .num{color:var(--gold-hi)}
   .lh-card h3{font-size:clamp(1.8rem,2.8vw,2.4rem);color:#fff}
   .lh-card .loc{font-family:var(--sans);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-hi)}
   .lh-card p{color:var(--muted-on-dark);font-size:1.06rem}
+  .lh-photo{position:relative;margin:calc(var(--p) * -1) calc(var(--p) * -1) 14px;aspect-ratio:3/2;overflow:hidden;background:var(--char)}
+  .lh-photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  .lh-card:hover .lh-photo img{transform:scale(1.04)}
+  .lh-photo figcaption{position:absolute;right:0;bottom:0;max-width:100%;padding:6px 10px;background:rgba(20,24,28,.72);font-family:var(--sans);font-size:.62rem;letter-spacing:.04em;color:rgba(244,241,234,.85);line-height:1.4}
+  .lh-photo figcaption a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+  .lh-photo figcaption a:hover{color:#fff}
   .lh-icon{width:30px;height:40px;color:var(--gold)}
   .lh-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:40px}
   .lh-foot p{color:var(--muted-on-dark);font-style:italic;max-width:620px}
@@ -459,24 +465,28 @@
     </div>
     <div class="lh-grid">
       <article class="lh-card reveal">
+        <figure class="lh-photo"><picture><source srcset="images/lighthouses/bakers-island-light.webp" type="image/webp"><img src="images/lighthouses/bakers-island-light.jpg" alt="Bakers Island Light tower and keeper's house on Bakers Island off Salem, Massachusetts" width="1200" height="800" loading="lazy"></picture><figcaption><a href="https://commons.wikimedia.org/wiki/File:Bakers_island_light.jpg" target="_blank" rel="noopener">Photo: Arwcheek</a> · Public domain</figcaption></figure>
         <div class="lh-top"><span class="num">01</span><span>Essex Heritage · 2025</span></div>
         <h3>Bakers Island Light Station</h3>
         <div class="loc">Salem, Massachusetts</div>
         <p>Restoration of the island light station, including full interior repointing of the tower and rebuilding three chimneys on the keepers' houses.</p>
       </article>
       <article class="lh-card reveal">
+        <figure class="lh-photo"><picture><source srcset="images/lighthouses/annisquam-harbor-light.webp" type="image/webp"><img src="images/lighthouses/annisquam-harbor-light.jpg" alt="Annisquam Harbor Light, a white brick tower on Wigwam Point in Gloucester, Massachusetts" width="1200" height="800" loading="lazy"></picture><figcaption><a href="https://commons.wikimedia.org/wiki/File:2008_Annisquam_light_Gloucester_Massachusetts_USA_2880462355.jpg" target="_blank" rel="noopener">Photo: David Smith</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption></figure>
         <div class="lh-top"><span class="num">02</span><span>2000</span></div>
         <h3>Annisquam Harbor Light</h3>
         <div class="loc">Gloucester, Massachusetts</div>
         <p>Brick tower restoration at the mouth of the Annisquam River, with roughly 3,000 bricks replaced by hand.</p>
       </article>
       <article class="lh-card reveal">
+        <figure class="lh-photo"><picture><source srcset="images/lighthouses/point-judith-light.webp" type="image/webp"><img src="images/lighthouses/point-judith-light.jpg" alt="Point Judith Light, an octagonal brownstone tower at the entrance to Narragansett Bay, Rhode Island" width="1200" height="800" loading="lazy"></picture><figcaption><a href="https://commons.wikimedia.org/wiki/File:Point_Judith_Light_at_entrance_to_Narragansett_Bay,_Rhode_Island_LCCN2011630328.tif" target="_blank" rel="noopener">Photo: Carol M. Highsmith, Library of Congress</a> · Public domain</figcaption></figure>
         <div class="lh-top"><span class="num">03</span><span>Site supervisor</span></div>
         <h3>Point Judith Light</h3>
         <div class="loc">Narragansett, Rhode Island</div>
         <p>U.S. Coast Guard restoration of a soft brownstone tower, one of the most demanding materials on the coast to restore.</p>
       </article>
       <article class="lh-card reveal">
+        <figure class="lh-photo"><picture><source srcset="images/lighthouses/brant-point-light.webp" type="image/webp"><img src="images/lighthouses/brant-point-light.jpg" alt="Brant Point Light, a small white tower at the entrance to Nantucket Harbor, Massachusetts" width="1200" height="800" loading="lazy"></picture><figcaption><a href="https://commons.wikimedia.org/wiki/File:Brant_Point_Light_-_Brant_Point_MA.jpg" target="_blank" rel="noopener">Photo: Henry Zbyszynski</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption></figure>
         <div class="lh-top"><span class="num">04</span><span>Site supervisor</span></div>
         <h3>Brant Point Light</h3>
         <div class="loc">Nantucket, Massachusetts</div>
@@ -484,7 +494,7 @@
       </article>
     </div>
     <div class="lh-foot">
-      <p>Plus more than a dozen other lighthouse projects for the U.S. Coast Guard and preservation organizations.</p>
+      <p>Plus more than a dozen other lighthouse projects for the U.S. Coast Guard and preservation organizations. <span style="display:block;font-size:.9rem;margin-top:8px;font-style:normal;opacity:.8">Lighthouse photographs are from Wikimedia Commons and show each light, not J. Nally &amp; Company's restoration work.</span></p>
       <a class="btn" href="#contact">Discuss a historic project <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </div>
