@@ -171,6 +171,14 @@
   textarea{min-height:130px;resize:vertical}
   form .btn{width:100%;border:0}
 
+  .careers{background:var(--stone)}
+  .roles{list-style:none;margin:30px 0}
+  .roles li{padding:18px 0;border-bottom:1px solid var(--mortar)}
+  .roles strong{display:block;font-family:var(--serif);font-size:1.45rem;color:var(--navy);font-weight:600}
+  .roles span{color:var(--muted);font-size:.95rem}
+  .careers .note{font-size:.88rem;color:var(--muted)}
+  .check{display:flex;gap:10px;align-items:center;font-weight:500;font-size:.92rem;margin-bottom:18px}
+  .check input{width:auto;margin:0}
   footer{background:#0e1a2b;color:rgba(255,255,255,.65);padding:60px 0 30px;font-size:.9rem}
   .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
   .foot-grid h4{color:#fff;font-family:var(--serif);font-size:1.25rem;margin-bottom:12px;font-weight:600}
@@ -221,6 +229,7 @@
       <li><a href="#lighthouses">Lighthouses</a></li>
       <li><a href="#work">Our Work</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#careers">Careers</a></li>
       <li><a href="#contact" class="btn btn-primary">Request a Consultation</a></li>
     </ul>
   </div>
@@ -445,6 +454,58 @@
   </div>
 </section>
 
+<!-- CAREERS -->
+<section class="careers" id="careers">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Careers</div>
+      <h2 style="font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);margin-bottom:20px">Join the crew.</h2>
+      <p style="color:var(--muted)">We're always looking for hardworking people who take pride in their work. Experienced or just starting out, if you want to learn real restoration masonry on some of the most historic structures in New England, we'd like to hear from you.</p>
+      <ul class="roles">
+        <li><strong>Experienced Mason</strong><span>Stone, brick and restoration work. Experience with lime mortar and repointing is a plus.</span></li>
+        <li><strong>Mason Tender / Laborer</strong><span>Mixing, staging, hauling and site work. A good way into the trade.</span></li>
+        <li><strong>Apprentice</strong><span>No experience needed. Show up on time, work hard and want to learn, and we'll teach you.</span></li>
+      </ul>
+      <p class="note">Jobs are based around the North Shore and Cape Ann. Reliable transportation required.</p>
+    </div>
+    <form class="reveal" id="apply-form">
+      <div class="row">
+        <div><label for="a-name">Full Name</label><input id="a-name" required></div>
+        <div><label for="a-phone">Phone</label><input id="a-phone" type="tel" required></div>
+      </div>
+      <div class="row">
+        <div><label for="a-email">Email</label><input id="a-email" type="email"></div>
+        <div><label for="a-town">Town You Live In</label><input id="a-town"></div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="a-role">Position</label>
+          <select id="a-role">
+            <option>Experienced Mason</option>
+            <option>Mason Tender / Laborer</option>
+            <option>Apprentice</option>
+            <option>Not sure / Open to anything</option>
+          </select>
+        </div>
+        <div>
+          <label for="a-exp">Years of Experience</label>
+          <select id="a-exp">
+            <option>None, ready to learn</option>
+            <option>Less than 1 year</option>
+            <option>1 to 3 years</option>
+            <option>3 to 10 years</option>
+            <option>10+ years</option>
+          </select>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="a-license"> I have a valid driver's license and reliable transportation</label>
+      <label for="a-msg">Tell us about yourself</label>
+      <textarea id="a-msg" placeholder="Past jobs, the kind of work you've done, when you can start..."></textarea>
+      <button class="btn btn-primary" type="submit">Submit Application</button>
+    </form>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
@@ -494,6 +555,7 @@
       </div>
       <div>
         <h4>Services</h4>
+        <a href="#careers">Careers</a>
         <a href="#lighthouses">Lighthouse Restoration</a>
         <a href="#services">Historic Restoration</a>
         <a href="#services">Stone Walls</a>
@@ -522,6 +584,13 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // Until a form service (Formspree, Netlify Forms, etc.) is connected, this opens the visitor's email app.
+  document.getElementById('apply-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value;
+    const body = `Name: ${v('a-name')}\nPhone: ${v('a-phone')}\nEmail: ${v('a-email')}\nTown: ${v('a-town')}\nPosition: ${v('a-role')}\nExperience: ${v('a-exp')}\nDriver's license & transportation: ${document.getElementById('a-license').checked ? 'Yes' : 'No'}\n\n${v('a-msg')}`;
+    location.href = `mailto:info@jnallymasonry.com?subject=${encodeURIComponent('Job application - ' + v('a-role') + ' - ' + v('a-name'))}&body=${encodeURIComponent(body)}`;
+  });
+
   document.getElementById('quote-form').addEventListener('submit', e => {
     e.preventDefault();
     const v = id => document.getElementById(id).value;
