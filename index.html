@@ -202,6 +202,26 @@
   .outlets{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
   .outlets li{font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;border:1px solid var(--line-dark);color:rgba(244,241,234,.85)}
 
+  .press-2 figure{margin:0}
+  .book{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,64px);align-items:center;max-width:1040px;margin:90px auto 0;padding:clamp(28px,4vw,48px);background:var(--char-2);border:1px solid var(--line-dark);text-align:left}
+  .book-art{width:150px;aspect-ratio:3/4;background:linear-gradient(160deg,#2f4a63,#1b2c3d);border-left:10px solid #142230;box-shadow:12px 14px 0 rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;color:var(--gold-hi)}
+  .book-art svg{width:56px;height:96px}
+  .book h3{font-size:clamp(1.7rem,3vw,2.4rem);color:#fff;margin:4px 0 6px}
+  .book .sub{font-style:italic;color:var(--muted-on-dark);margin-bottom:14px}
+  .book p{color:var(--muted-on-dark);font-size:1.06rem;margin-bottom:18px;max-width:620px}
+  .articles{max-width:1040px;margin:90px auto 0;text-align:left}
+  .articles h3{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-hi);margin-bottom:18px}
+  .articles ol{list-style:none;border-top:1px solid var(--line-dark)}
+  .articles li a{display:grid;grid-template-columns:200px 1fr auto;gap:6px 30px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line-dark);text-decoration:none;transition:padding .3s,background .3s}
+  .articles li a:hover{background:rgba(244,241,234,.04);padding-left:14px;padding-right:14px}
+  .articles .src{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi);line-height:1.6}
+  .articles .src small{display:block;color:var(--muted-on-dark);letter-spacing:.14em}
+  .articles .t{font-size:1.28rem;color:#fff;line-height:1.3}
+  .articles .d{display:block;font-size:1rem;color:var(--muted-on-dark);margin-top:4px}
+  .articles .go{font-family:var(--sans);color:var(--gold-hi);transition:transform .25s}
+  .articles li a:hover .go{transform:translate(3px,-3px)}
+  .articles .note{margin-top:16px;font-size:.92rem;color:var(--muted-on-dark);font-style:italic}
+
   /* ---------- PROCESS ---------- */
   .process{background:var(--ivory-2)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);list-style:none}
@@ -319,6 +339,10 @@
     .facts{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr}
     .press-2 q{font-size:1.4rem}
+    .book{grid-template-columns:1fr}
+    .book-art{width:120px}
+    .articles li a{grid-template-columns:1fr auto}
+    .articles .src{grid-column:1/-1}
   }
 </style>
 </head>
@@ -538,9 +562,40 @@
         <q>Marty always wanted to do it the right way. He didn't take shortcuts.</q>
         <figcaption><cite>U.S. Coast Guard inspector · Northshore Magazine</cite></figcaption>
       </figure>
-      <ul class="outlets reveal" aria-label="Featured in and worked with">
-        <li>The Boston Globe</li><li>Northshore Magazine</li><li>Lighthouse Digest</li><li>Essex Heritage</li><li>U.S. Coast Guard</li>
-      </ul>
+      <figure class="reveal">
+        <q>Thanks to mason Marty Nally and his crew, the lighthouse project was completed on time and on budget.</q>
+        <figcaption><cite>Annie Harris, Essex Heritage · Wicked Local, 2015</cite></figcaption>
+      </figure>
+    </div>
+
+    <div class="book reveal" id="book">
+      <div class="book-art" aria-hidden="true">
+        <svg viewBox="0 0 56 96" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 22 L28 10 L36 22 Z"/><rect x="21" y="22" width="14" height="12"/><path d="M17 34h22M20 34 L15 88 h26 L36 34"/><path d="M18 52h20M17 70h22"/><path d="M4 94h48"/><path d="M38 26 L54 20 M18 26 L2 20" opacity=".6"/></svg>
+      </div>
+      <div>
+        <span class="eyebrow">Written by Marty</span>
+        <h3>My Dad Fixed the Lighthouse</h3>
+        <div class="sub">Baker's Island Light, Salem, Massachusetts · Martin J. Nally · Planet Lighthouse, 2001</div>
+        <p>A picture book Marty wrote about restoring Bakers Island Light, the island lighthouse off Salem. According to <i>The Boston Globe</i>, the first printing of 9,000 copies sold out.</p>
+        <a class="link" href="https://salemstate.noblenet.org/GroupedWork/a80f9201-6014-8d6f-3067-ea4081e6f0f4-eng/Home" target="_blank" rel="noopener">Find it in a library <span class="arr" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="articles">
+      <h3>Articles &amp; features</h3>
+      <ol class="reveal">
+        <li><a href="https://www.bostonglobe.com/business/2018/08/09/kept-lot-lighthouses-from-crumbling/jG3VhJnxA7qoM6aF4fZLzJ/story.html" target="_blank" rel="noopener"><span class="src">The Boston Globe<small>August 2018</small></span><span class="t">Profile: Marty Nally's lighthouse restoration career<span class="d">Including the helicopter plan that won the Bakers Island job.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.boston.com/news/jobs/2018/09/18/he-built-the-lighthouse/" target="_blank" rel="noopener"><span class="src">Boston.com<small>September 2018</small></span><span class="t">He built the lighthouse<span class="d">The Globe's profile, republished on Boston.com.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.nshoremag.com/faces-places/how-north-shores-martin-nally-restored-new-englands-most-historic-lighthouses/" target="_blank" rel="noopener"><span class="src">Northshore Magazine<small>Feature</small></span><span class="t">How North Shore's Martin Nally restored New England's most historic lighthouses<span class="d">From Brant Point on Nantucket to Point Judith in Rhode Island.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://essexheritage.org/event/bakers-island-light-station-preservation-and-perseverance/" target="_blank" rel="noopener"><span class="src">Essex Heritage<small>June 2025</small></span><span class="t">Bakers Island Light Station: Preservation and Perseverance<span class="d">Marty was the featured speaker at this talk on lighthouse preservation, held at the Manchester-by-the-Sea Museum.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://creativecollectivema.com/bakers-island-light-restoration-saves-200-year-old-treasure/" target="_blank" rel="noopener"><span class="src">Creative Collective<small>August 2025</small></span><span class="t">Baker's Island Light restoration saves 200-year-old treasure<span class="d">On the 2025 interior repointing and chimney restoration Marty led.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.cnhi.com/rss_feed/essex-heritage-completes-work-on-lighthouse/" target="_blank" rel="noopener"><span class="src">The Salem News (CNHI)<small>2025</small></span><span class="t">Essex Heritage completes work on lighthouse<span class="d">The 2025 Bakers Island masonry project, led by Marty with mason Matthew Holland.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://essexheritage.org/about/news/bakers-island-lighthouse-has-1017-visitors-during-its-first-season/" target="_blank" rel="noopener"><span class="src">Wicked Local · Essex Heritage<small>2015</small></span><span class="t">Bakers Island Lighthouse has 1,017 visitors during its first season<span class="d">On the restoration that opened the light station to the public.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.lighthousedigest.com/digest/StoryPage.cfm?StoryKey=839" target="_blank" rel="noopener"><span class="src">Lighthouse Digest<small>2000</small></span><span class="t">Salute to the Coast Guard: Annisquam Light back in shape<span class="d">Roughly 3,000 bricks replaced in Gloucester's Annisquam Harbor Light.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.lighthousedigest.com/digest/StoryPage.cfm?StoryKey=841" target="_blank" rel="noopener"><span class="src">Lighthouse Digest<small>2000</small></span><span class="t">Salute to the Coast Guard: Restoration of Point Judith Lighthouse<span class="d">Restoring the brownstone tower at the entrance to Narragansett Bay.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.lighthousedigest.com/digest/StoryPage.cfm?StoryKey=902" target="_blank" rel="noopener"><span class="src">Lighthouse Digest<small>2000</small></span><span class="t">Brant Point Light restoration on Nantucket<span class="d">Coast Guard restoration of the lantern and tower.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+      </ol>
+      <p class="note">Links open the original publishers' sites. Some may require a subscription.</p>
     </div>
   </div>
 </section>
